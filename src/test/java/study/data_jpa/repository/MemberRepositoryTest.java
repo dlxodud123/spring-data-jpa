@@ -11,13 +11,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @Transactional
-@Rollback(value = false)
 public class MemberRepositoryTest {
 
     @Autowired MemberRepository memberRepository;
 
     @Test
     public void testMember(){
+        System.out.println("memberRepository = " + memberRepository.getClass());
         Member member = new Member("memberA");
 
         Member savedMember = memberRepository.save(member);
